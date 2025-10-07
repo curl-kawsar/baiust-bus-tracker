@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 
 const BASE_URL = process.env.BASE_URL || 'http://172.104.160.132:3000';
-const AUTH_TOKEN = process.env.AUTH_TOKEN || 'BCC2025';
+const AUTH_TOKEN = process.env.BUS_API_TOKEN || 'BCC2025';
 
 export async function GET(request) {
   const { searchParams } = new URL(request.url);

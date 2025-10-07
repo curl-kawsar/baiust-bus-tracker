@@ -6,7 +6,7 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 3001;
 const BASE_URL = process.env.BASE_URL || 'http://172.104.160.132:3000';
-const AUTH_TOKEN = process.env.AUTH_TOKEN || 'BCC2025';
+const AUTH_TOKEN = process.env.BUS_API_TOKEN || 'BCC2025';
 
 // Middleware
 app.use(cors());

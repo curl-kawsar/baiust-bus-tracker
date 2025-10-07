@@ -31,7 +31,7 @@ Set these environment variables in your Vercel dashboard:
 
 ```
 BASE_URL=http://172.104.160.132:3000
-AUTH_TOKEN=BCC2025
+BUS_API_TOKEN=BCC2025
 ```
 
 ### **Project Structure for Vercel**

@@ -1,0 +1,131 @@
+@import 'leaflet/dist/leaflet.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Leaflet CSS overrides */
+.leaflet-container {
+  height: 600px !important;
+  width: 100% !important;
+  border-radius: 8px;
+  z-index: 0;
+}
+
+.leaflet-popup-content-wrapper {
+  @apply bg-card text-card-foreground;
+}
+
+.leaflet-popup-tip {
+  @apply bg-card;
+}
+
+/* Fix for Leaflet control positioning */
+.leaflet-control-zoom {
+  @apply z-10;
+}
+
+.leaflet-control-attribution {
+  @apply z-10;
+}
+
+/* Ensure markers are visible */
+.leaflet-marker-icon,
+.leaflet-marker-shadow {
+  @apply z-10;
+}
+
+/* Layer control styling */
+.leaflet-control-layers {
+  @apply bg-background border border-border rounded-md shadow-sm;
+}
+
+.leaflet-control-layers-expanded {
+  @apply p-2;
+}
+
+.leaflet-control-layers label {
+  @apply text-foreground font-medium;
+}
+
+.leaflet-control-layers-separator {
+  @apply border-border;
+}
+
+/* Zoom control styling */
+.leaflet-control-zoom a {
+  @apply bg-background text-foreground border-border;
+}
+
+.leaflet-control-zoom a:hover {
+  @apply bg-accent;
+}
+
+/* Custom route line styles for our direct OSRM implementation */
+.route-polyline {
+  stroke-width: 6 !important;
+  stroke: #3b82f6 !important;
+  stroke-opacity: 0.8 !important;
+}
+
+.route-outline {
+  stroke-width: 8 !important;
+  stroke: #ffffff !important;
+  stroke-opacity: 0.6 !important;
+}
